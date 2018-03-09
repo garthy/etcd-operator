@@ -67,6 +67,8 @@ func (c *Controller) run() {
 		ns,
 		fields.Everything())
 
+	informer
+
 	_, informer := cache.NewIndexerInformer(source, &api.EtcdCluster{}, 0, cache.ResourceEventHandlerFuncs{
 		AddFunc:    c.onAddEtcdClus,
 		UpdateFunc: c.onUpdateEtcdClus,
